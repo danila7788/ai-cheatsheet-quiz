@@ -104,7 +104,7 @@ function Quiz({ questions }: { questions: QuizQuestion[] }) {
     };
 
     const score = submitted
-        ? answers.reduce((acc, ans, idx) => {
+        ? answers.reduce<number>((acc, ans, idx) => {
             return acc + (ans === questions[idx].correctIndex ? 1 : 0);
         }, 0)
         : 0;
